@@ -11,14 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('annonces', function (Blueprint $table) {
+        Schema::create('bénevoles', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('association_id');
-            $table->string('titre');
-            $table->text('description');
-            $table->date('date_debut');
-            $table->date('date_fin');
-            $table->bigInteger('montant');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('annonces');
+        Schema::dropIfExists('bénevoles');
     }
 };
